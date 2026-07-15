@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Elorian</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:Georgia, serif;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    width:100%;
+    padding:30px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,215,0,.12);
+}
+
+.logo{
+    color:white;
+    font-size:38px;
+    letter-spacing:8px;
+    font-weight:300;
+}
+
+.logo sub{
+    color:gold;
+    font-size:12px;
+    letter-spacing:6px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:45px;
+    font-size:14px;
+    letter-spacing:3px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* ================= HERO ================= */
+
+.art-hero{
+    min-height:48vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.art-hero h1{
+    color:gold;
+    font-size:72px;
+    letter-spacing:8px;
+    margin-bottom:20px;
+}
+
+.art-hero p{
+    color:white;
+    font-size:20px;
+    font-style:italic;
+    letter-spacing:3px;
+}
+
+/* ================= COMMON SECTION ================= */
+
+.art-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:90px 80px;
+}
+
+.reverse{
+    flex-direction:row-reverse;
+}
+
+.art-section img,
+.art-section video{
+    width:450px;
+    height:560px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(255,215,0,.18);
+}
+
+.art-text{
+    width:520px;
+}
+
+.art-text h2{
+    color:gold;
+    font-size:34px;
+    letter-spacing:5px;
+    margin-bottom:25px;
+}
+
+.art-text p{
+    color:#d5d5d5;
+    font-size:18px;
+    line-height:1.9;
+    letter-spacing:1px;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+    padding:120px 40px;
+    text-align:center;
+    background:#070707;
+}
+
+.quote h2{
+    color:gold;
+    font-size:38px;
+    line-height:1.8;
+    letter-spacing:4px;
+    font-style:italic;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#000;
+    border-top:1px solid rgba(255,215,0,.12);
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h2{
+    color:gold;
+    letter-spacing:6px;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:lightgray;
+    margin-bottom:25px;
+    font-style:italic;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:gold;
+}
+
+.copy{
+    color:gray;
+    margin-top:30px;
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+    padding:25px;
+}
+
+.logo{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    letter-spacing:3px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+.art-hero{
+    min-height:40vh;
+}
+
+.art-hero h1{
+    font-size:42px;
+    letter-spacing:4px;
+}
+
+.art-hero p{
+    font-size:17px;
+}
+
+.art-section,
+.reverse{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+    padding:60px 25px;
+}
+
+.art-section img,
+.art-section video{
+    width:100%;
+    max-width:430px;
+    height:auto;
+}
+
+.art-text{
+    width:100%;
+}
+
+.art-text h2{
+    font-size:28px;
+}
+
+.art-text p{
+    font-size:16px;
+}
+
+.quote{
+    padding:70px 25px;
+}
+
+.quote h2{
+    font-size:26px;
+}
+
+}
+.art-text h2::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:2px;
+    background:gold;
+    margin:15px 0 0;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+ELORIAN <sub>SINCE 1775</sub>
+</div>
+
+<div>
+       <a href="{% url 'index' %}">HOME</a>
+       <a href="{% url 'collection' %}">COLLECTION</a>
+       <a href="{% url 'theartofelorian' %}">THE ART OF ELORIAN</a>
+       <a href="{% url 'contact' %}">CONTACT</a>
+</div>
+
+</nav>
+
+<section class="art-hero">
+
+<div>
+<h1>THE ART OF ELORIAN</h1>
+<p>Where time becomes a masterpiece.</p>
+</div>
+
+</section>
+
+<section class="art-section">
+
+<img src="{% static 'img/philo.png' %}" alt="Our Philosophy">
+
+<div class="art-text">
+<h2>OUR PHILOSOPHY</h2>
+
+<p>
+At Elorian, every watch begins with patience, precision and passion.
+We believe true luxury is not defined by price, but by the countless
+hours of dedication behind every handcrafted masterpiece. Every detail
+is carefully perfected to create a timeless symbol of excellence.
+</p>
+
+</div>
+
+</section>
+
+<section class="art-section reverse">
+
+<video autoplay muted loop playsinline preload="auto">
+<source src="{% static 'img/handmade.mp4' %}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<div class="art-text">
+
+<h2>CRAFTED BY HAND</h2>
+
+<p>
+Each Elorian timepiece is carefully assembled by skilled hands.
+From the smallest gear to the final polish, every step is treated
+like art. Nothing is rushed, because true elegance takes time.
+</p>
+
+</div>
+
+</section>
+
+<section class="art-section">
+
+<img src="{% static 'img/material.png' %}" alt="Materials">
+
+<div class="art-text">
+
+<h2>MATERIALS & PRECISION</h2>
+
+<p>
+Fine metals, sapphire crystal, polished finishes and remarkable
+engineering come together to create watches that are built to last
+for generations. Precision is not our goal—it is our tradition.
+</p>
+
+</div>
+
+</section>
+
+<section class="quote">
+
+<h2>
+"Every second deserves perfection.  
+Every masterpiece deserves Elorian."
+</h2>
+
+</section>
+
+<footer>
+
+<h2>ELORIAN</h2>
+
+<p>Luxury Watches Crafted For Timeless Souls.</p>
+
+<div class="footer-links">
+       <a href="{% url 'index' %}">HOME</a>
+       <a href="{% url 'collection' %}">COLLECTION</a>
+       <a href="{% url 'theartofelorian' %}">THE ART OF ELORIAN</a>
+       <a href="{% url 'contact' %}">CONTACT</a>
+</div>
+
+<div class="copy">
+© 2026 ELORIAN. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
+

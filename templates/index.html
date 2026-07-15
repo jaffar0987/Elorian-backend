@@ -1,0 +1,508 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+    font-family:Georgia, serif;
+}
+
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:30px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:+1;
+}
+
+.logo{
+    color:white;
+    font-size:38px;
+    letter-spacing:8px;
+    font-weight:300;
+    position: relative;
+}
+.logo sub{
+    color: gold;
+    font-size: 12px;
+}
+
+.menu-btn{
+    color:white;
+    cursor:pointer;
+    letter-spacing:3px;
+}
+
+.menu-overlay{
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100vh;
+    background:black;
+    transition:0.5s ease;
+    z-index:2000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.menu-overlay ul{
+    list-style:none;
+    text-align:center;
+}
+
+.menu-overlay ul li{
+    margin:30px;
+}
+
+.menu-overlay ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:25px;
+    letter-spacing:4px;
+    transition:.3s;
+}
+
+.menu-overlay ul li a:hover{
+    color:gold;
+}
+
+.close-btn{
+    position:absolute;
+    top:30px;
+    right:60px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.hero{
+    color:white;
+    justify-content:center;
+    height:100vh;
+    align-items:center;
+    display:flex;
+    flex-direction: column;
+}
+
+.hero h1{
+    font-size:70px;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    color:white;
+}
+.hero-video{
+    width:100%;
+    max-height:500px;
+    height:100vh;
+    object-fit:contain;
+    display:block;
+    margin-top:40px;
+    border-radius:3px;
+    object-fit:cover;    
+}
+.hero video{
+    margin-top:-100px;
+}
+.luxury-line{
+    color:gold;
+    font-size:30px;
+    letter-spacing:8px;
+    text-align:center;
+    margin-top:-160px;
+}
+.watch{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    margin-top:150px;
+    justify-content:flex-start;
+}
+.watch img{
+    width:520px;
+    min-height:60vh;
+    border-radius:20px;  
+    animation:floatWatch 3s ease-in-out infinite;
+}
+.watch-text{
+    margin-left:60px;
+    color:white;
+    width:800px;
+    margin-left:40px;
+}
+.watch-text p{
+    color:white;
+    font-family: Georgia, serif;
+    font-size:20px;
+    line-height: 1.8;
+    text-align: left;
+    font-style: italic;
+    word-spacing: normal;
+    letter-spacing: 0.5px;
+    margin-top:10px;
+}
+.watch-text h2{
+    font-size:35px;
+    letter-spacing:2px;
+    color:gold;
+}
+.watch-text h2::after{
+    content: "";
+    display: block;
+    width: 160px;
+    height: 3px;
+    background: gold;
+    margin: 18px 0 0;
+}
+
+.watch2{
+    display:flex;
+    align-items:center;
+    /* justify-content:center; */
+    min-height:100vh;
+    margin-top:150px;
+    flex-direction:row-reverse;
+    justify-content:flex-start;
+
+}
+.watch2 img{
+    width:500px;
+    min-height:50vh;
+    border-radius:20px;
+    animation:floatWatch 4s ease-in-out infinite;  
+}
+.watch-text2{
+    color:white;
+    /* margin-left:-29px; */
+    max-width:700px;
+    justify-content:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    margin-right:50px;
+    margin-left:60px;
+
+}
+.watch2 h2{
+    color:gold;
+    font-size:30px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+.watch-text2 h2::after{
+    content: "";
+    display: block;
+    width: 160px;
+    height: 3px;
+    background: gold;
+    margin: 18px 0 0;
+}
+.watch-text2 p {
+   color:white;
+    font-family: Georgia, serif;
+    font-size:20px;
+    line-height: 1.8;
+    text-align: left;
+    font-style: italic;
+    word-spacing: normal;
+    letter-spacing: 2px;
+    border-left-width: 0cap;
+}
+
+  /* for img floating */
+
+@keyframes floatWatch{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.watch3{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    margin-top:150px;
+    justify-content:flex-start;
+}
+.watch3 img{
+    width:520px;
+    min-height:60vh;
+    border-radius:20px;  
+    animation:floatWatch 3s ease-in-out infinite;
+}
+.watch-text3{
+    width: 100%;
+    max-width: 720px;
+}
+.watch-text3 p{
+ color: #d6d6d6;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: left;
+    font-style: italic;
+    word-spacing: normal;
+    letter-spacing: 0.5px;}
+.watch-text3 h2{
+    font-size:35px;
+    letter-spacing:2px;
+    color:gold;
+}
+.watch-text3 h2::after{
+
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: gold;
+    margin-top: 15px;
+}
+   /* founder section */
+
+.founder{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    padding: 100px 6%;
+    background: #000;
+    border-top: 1px solid rgba(255,215,0,0.3);
+    border-bottom: 1px solid rgba(255,215,0,0.3);
+}
+
+.founder img{
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    display: block;
+}
+
+.founder-text{
+    width: 100%;
+    max-width: 720px;
+}
+
+.founder-text h2{
+    color: gold;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.founder-text h2::after{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: gold;
+    margin-top: 15px;
+}
+
+.founder-text p{
+    color: #d6d6d6;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: left;
+    font-style: italic;
+    word-spacing: normal;
+    letter-spacing: 0.5px;
+}
+.founder-text p i{
+    font-style: italic;
+}
+
+@media(max-width: 900px){
+    .founder{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .founder img{
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .founder-text h2::after{
+        margin: 15px auto 0;
+    }
+}
+
+   /* footersection */
+.footer{
+    border-top:1px solid rgba(255,215,0,0.3);
+    padding:80px 20px;
+    text-align:center;
+    background:black;
+}
+
+.footer h2{
+    color:gold;
+    font-size:42px;
+    letter-spacing:8px;
+    font-weight:300;
+}
+
+.footer .since{
+    color:gray;
+    font-size:14px;
+    letter-spacing:4px;
+    margin-top:10px;
+}
+
+.footer-links{
+    margin:40px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    letter-spacing:2px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:gold;
+}
+
+.footer-tagline{
+    color:lightgray;
+    font-style:italic;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.copyright{
+    color:gray;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+
+</style>
+</head>
+<body>
+    <nav>
+    <div class="logo">ELORIAN
+    <sub class="Since">SINCE 1775</sub></div>
+    <div class="menu-btn" onclick="openMenu()">MENU</div>
+           
+</nav> 
+    <section class="hero">
+        <h1>LUXURY REDEFINED</h1>
+        <p>Timeless elegance and craftsmanship.</p>
+    </section>
+    <p class="luxury-line">
+                 Where Engineering Meets Elegance</p>
+    <video class="hero-video"autoplay muted loop playinline>
+       <source src="{% static 'img/hero.mp4' %}" type="video/mp4">
+    </video>
+
+<div class="menu-overlay" id="menu">
+
+    <div class="close-btn" onclick="closeMenu()">✕</div>
+       
+    <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'collection' %}">COLLECTION</a></li>
+        <li><a href="{% url 'theartofelorian' %}">THE ART OF ELORIAN</a></li>
+        <!-- <li><a href="#">JOURNAL</a></li> -->
+        <li><a href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+<script>
+        
+function openMenu(){
+    document.getElementById("menu").style.left = "0";
+}
+
+function closeMenu(){
+    document.getElementById("menu").style.left = "-100%";
+}
+</script>
+   </div>
+<section class="watch">
+    <img src="{% static 'img/watch.re.jpg' %}" alt="">
+    <div class="watch-text">
+        <h2>The Art of Precision</h2>
+        <p><i>Crafted with exceptional attention to detail, this timepiece combines bold design with refined engineering.Its intricate mechanics and striking aesthetics represent the perfect balance between performance and sophistication.</i></p>
+    </div>
+</section>
+
+<section class="watch2">
+   <img src="{% static 'img/watch.l.jpeg' %}" alt="">
+    <div class="watch-text2">
+        <h2>NOT MADE FOR EVERYONE</h2>
+        <p><i>True luxury was never meant to be common. Built for individuals who demand excellence in every aspect of life Elorian stands as a symbol of exclusivity craftsmanship and unmatched distinction.</i></p>
+    </div>
+</section>
+
+
+<section class="watch3">
+   <img src="{% static 'img/watchun.jpg' %}" alt="">
+    <div class="watch-text3">
+    <h2>ELORIAN DRAGON NOIR</h2>
+    <p><i>A tribute to strength and wisdom,this extraordinary creation captures the essence of a legendary creature Designed for visionaries who shape their own destiny.</i></p>
+    </div>
+</section>
+<section class="founder">
+   <img src="{% static 'img/founder.png' %}" alt="">
+    <div class="founder-text">
+        <h2>THE ART OF ELORIAN</h2>
+        <p><i>Every masterpiece begins with a vision. Inspired by generations of master watchmakers Elorian embraces the values of precision, patience, and timeless craftsmanship. Each timepiece is created not merely to measure time, but to celebrate it.</i></p>
+    </div>
+</section>
+
+<footer id="contact" class="footer">
+    <h2>ELORIAN</h2>
+    <p class="since">SINCE 1775</p>
+    <div class="footer-links">
+       <a href="{% url 'index' %}">HOME</a>
+       <a href="{% url 'collection' %}">COLLECTION</a>
+       <a href="{% url 'theartofelorian' %}">THE ART OF ELORIAN</a>
+       <a href="{% url 'contact' %}">CONTACT</a>
+    </div>
+    <p class="footer-tagline">
+        Where Engineering Meets Elegance
+    </p>
+    <p class="copyright">
+        © 2026 ELORIAN. All Rights Reserved.
+    </p>
+
+</footer>
+   
+</body>
+</html>
+
+
+

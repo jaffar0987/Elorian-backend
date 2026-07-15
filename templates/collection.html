@@ -1,0 +1,544 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELORIAN COLLECTION</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+    color:white;
+    font-family:Georgia, serif;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:30px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,215,0,.15);
+}
+
+.logo{
+    color:white;
+    font-size:38px;
+    letter-spacing:8px;
+    font-weight:300;
+}
+
+.logo sub{
+    color:gold;
+    font-size:12px;
+    letter-spacing:6px;
+    margin-left:5px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:40px;
+    font-size:14px;
+    letter-spacing:3px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:gold;
+}
+
+/* COLLECTION */
+
+.collection-title{
+    text-align:center;
+    color:gold;
+    font-size:48px;
+    letter-spacing:8px;
+    margin-top:60px;
+}
+
+.collection-subtitle{
+    text-align:center;
+    color:white;
+    margin-top:15px;
+    font-style:italic;
+    letter-spacing:2px;
+    padding:0 20px;
+}
+
+.collection-wrapper{
+    position:relative;
+}
+
+.watch-gallery{
+    display:flex;
+    gap:60px;
+    overflow-x:auto;
+    padding:70px 60px;
+    scroll-behavior:smooth;
+}
+
+.watch-gallery::-webkit-scrollbar{
+    display:none;
+}
+
+.watch-card{
+    min-width:350px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.watch-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.watch-card img:hover{
+    transform:scale(1.05);
+}
+
+.watch-card h2{
+    color:gold;
+    margin-top:20px;
+    letter-spacing:2px;
+    font-size:24px;
+    min-height:70px;
+}
+
+.watch-card p{
+    color:lightgray;
+    margin-top:10px;
+    line-height:1.8;
+    font-style:italic;
+    font-size:16px;
+    min-height:70px;
+}
+
+.watch-card h3{
+    color:gold;
+    margin-top:10px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+    font-size:22px;
+}
+
+.buy-btn{
+    margin-top:15px;
+    padding:14px 35px;
+    background:transparent;
+    color:gold;
+    border:1px solid gold;
+    letter-spacing:2px;
+    font-family:Georgia, serif;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.buy-btn:hover{
+    background:gold;
+    color:black;
+    box-shadow:0 0 25px gold;
+}
+
+.arrow{
+    position:absolute;
+    top:45%;
+    transform:translateY(-50%);
+    background:black;
+    color:gold;
+    border:1px solid gold;
+    font-size:35px;
+    width:50px;
+    height:50px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.left{
+    left:20px;
+}
+
+.right{
+    right:20px;
+}
+
+.collection-end{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.collection-end h2{
+    color:gold;
+    font-size:40px;
+    letter-spacing:5px;
+}
+
+.collection-end p{
+    color:lightgray;
+    font-size:18px;
+    font-style:italic;
+    margin:25px auto;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.collection-end a{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 35px;
+    color:gold;
+    border:1px solid gold;
+    text-decoration:none;
+    letter-spacing:2px;
+    transition:.4s;
+}
+
+.collection-end a:hover{
+    background:gold;
+    color:black;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        padding:25px 22px;
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .logo{
+        font-size:28px;
+        letter-spacing:5px;
+    }
+
+    .logo sub{
+        font-size:9px;
+        letter-spacing:3px;
+    }
+
+    .nav-links{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .nav-links a{
+        margin:0;
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .collection-title{
+        font-size:30px;
+        letter-spacing:4px;
+        margin-top:45px;
+        line-height:1.4;
+        padding:0 15px;
+    }
+
+    .collection-subtitle{
+        font-size:14px;
+        letter-spacing:1.5px;
+        line-height:1.6;
+    }
+
+    .watch-gallery{
+        gap:25px;
+        padding:50px 25px;
+    }
+
+    .watch-card{
+        min-width:280px;
+    }
+
+    .watch-card img{
+        height:280px;
+        border-radius:16px;
+    }
+
+    .watch-card h2{
+        font-size:20px;
+        min-height:auto;
+        line-height:1.4;
+    }
+
+    .watch-card p{
+        font-size:15px;
+        min-height:auto;
+    }
+
+    .watch-card h3{
+        font-size:20px;
+    }
+
+    .buy-btn{
+        padding:13px 30px;
+        font-size:13px;
+    }
+
+    .arrow{
+        width:38px;
+        height:38px;
+        font-size:24px;
+        top:42%;
+    }
+
+    .left{
+        left:5px;
+    }
+
+    .right{
+        right:5px;
+    }
+
+    .collection-end{
+        padding:70px 22px;
+    }
+
+    .collection-end h2{
+        font-size:28px;
+        letter-spacing:3px;
+        line-height:1.5;
+    }
+
+    .collection-end p{
+        font-size:16px;
+    }
+
+    .collection-end a{
+        padding:14px 25px;
+        font-size:13px;
+        line-height:1.5;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        ELORIAN
+        <sub>SINCE 1775</sub>
+    </div>
+
+    <div class="nav-links">
+       <a href="{% url 'index' %}">HOME</a>
+       <a href="{% url 'collection' %}">COLLECTION</a>
+       <a href="{% url 'theartofelorian' %}">THE ART OF ELORIAN</a>
+       <a href="{% url 'contact' %}">CONTACT</a>
+    </div>
+</nav>
+
+<h1 class="collection-title">ELORIAN COLLECTION</h1>
+<p class="collection-subtitle">Timeless Creations Crafted For Legends</p>
+
+<div class="collection-wrapper">
+<button class="arrow left" onclick="scrollGallery(-1)">❮</button>
+
+<div class="watch-gallery" id="watchGallery">
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch1.jpg' %}" alt="">
+        <h2>ELORIAN IMPERIAL GOLD</h2>
+        <p>Crafted for those who command attention, the Imperial Gold blends timeless elegance with precision.</p>
+        <h3>₹124,999</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch2.jpg' %}" alt="">
+        <h2>ELORIAN ROLEX CLASSIC</h2>
+        <p>A bold expression of exclusivity, created for individuals who value power, detail, and distinction.</p>
+        <h3>₹188,346</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch3.jpg' %}" alt="">
+        <h2>ELORIAN TISSOT PEACE NOIR</h2>
+        <p>A tribute to strength and wisdom, designed for visionaries who shape their own with flow and glow.</p>
+        <h3>₹89,900</h3>
+       <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch4.png' %}" alt="">
+        <h2>ELORIAN ROYAL DIAMOND</h2>
+        <p>A masterpiece of brilliance and prestige, crafted with a royal violet charm and purple elegance.</p>
+        <h3>₹194,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+</div>
+
+<button class="arrow right" onclick="scrollGallery(1)">❯</button>
+</div>
+
+<h1 class="collection-title">ELORIAN SIGNATURE SERIES</h1>
+<p class="collection-subtitle">Crafted For The Few, Admired By Many</p>
+
+<div class="collection-wrapper">
+<button class="arrow left" onclick="scrollGallery2(-1)">❮</button>
+
+<div class="watch-gallery" id="watchGallery2">
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch5.jpg' %}" alt="">
+        <h2>ELORIAN STIPE EMPEROR</h2>
+        <p>Crafted with rare emerald brilliance and commanding elegance.</p>
+        <h3>₹214,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch7.png' %}" alt="">
+        <h2>ELORIAN GREEN CROWN</h2>
+        <p>A symbol of mystery, power and timeless prestige.</p>
+        <h3>₹184,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch11.png' %}" alt="">
+        <h2>ELORIAN ROYAL SILVER</h2>
+        <p>Designed for visionaries who appreciate rare luxury.</p>
+        <h3>₹224,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch8.jpg' %}" alt="">
+        <h2>ELORIAN PURPLE RESERVE</h2>
+        <p>Precision and prestige united in one masterpiece.</p>
+        <h3>₹199,900</h3>
+       <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+       </a>
+    </div>
+
+</div>
+
+<button class="arrow right" onclick="scrollGallery2(1)">❯</button>
+</div>
+
+<h1 class="collection-title">ELORIAN LEGACY SERIES</h1>
+<p class="collection-subtitle">Where Prestige Meets Perfection</p>
+
+<div class="collection-wrapper">
+<button class="arrow left" onclick="scrollGallery3(-1)">❮</button>
+
+<div class="watch-gallery" id="watchGallery3">
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch9.jpg' %}" alt="">
+        <h2>ELORIAN RED SUPERIOR</h2>
+        <p>Crafted with rare emerald brilliance and commanding elegance, designed for timeless prestige.</p>
+        <h3>₹214,900</h3>
+      <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+</a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch10.jpg' %}" alt="">
+        <h2>ELORIAN ROYAL SAPPHIRE</h2>
+        <p>A masterpiece of precision and power, adorned with brilliant sapphire accents with gold royal and black.</p>
+        <h3>₹229,900</h3>
+       <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+    </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch6.jpg' %}" alt="">
+        <h2>ELORIAN OBSIDIAN BLACK</h2>
+        <p>Forged for visionaries who embrace mystery, confidence and unmatched distinction.</p>
+        <h3>₹184,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+        </a>
+    </div>
+
+    <div class="watch-card">
+        <img src="{% static 'img/watch12.png' %}" alt="">
+        <h2>ELORIAN BLUE & BLACK ELIXER</h2>
+        <p>An extraordinary expression of craftsmanship where luxury meets perfection.</p>
+        <h3>₹199,900</h3>
+        <a href="{% url 'login' %}">
+    <button class="buy-btn">BUY NOW</button>
+        </a>
+    </div>
+
+</div>
+
+<button class="arrow right" onclick="scrollGallery3(1)">❯</button>
+</div>
+
+<section class="collection-end">
+    <h2>ELORIAN PRIVATE COLLECTION</h2>
+    <p>
+        A rare selection crafted for those who see time as a symbol of power, legacy, and perfection.
+    </p>
+    <a href="{% url 'theartofelorian' %}">EXPLORE THE ART OF ELORIAN</a>
+</section>
+
+<script>
+function scrollGallery(direction){
+    document.getElementById("watchGallery").scrollBy({
+        left: direction * 310,
+        behavior: "smooth"
+    });
+}
+
+function scrollGallery2(direction){
+    document.getElementById("watchGallery2").scrollBy({
+        left: direction * 310,
+        behavior: "smooth"
+    });
+}
+
+function scrollGallery3(direction){
+    document.getElementById("watchGallery3").scrollBy({
+        left: direction * 310,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
