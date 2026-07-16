@@ -76,10 +76,9 @@ WSGI_APPLICATION = 'mypro.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+        default="mysql://root@localhost:3306/elorian"
     )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
